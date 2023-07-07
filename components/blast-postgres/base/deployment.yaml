@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: blast-postgres
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: blast-postgres
+    app.kubernetes.io/part-of: quarkus-blast
+  name: blast-postgres
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: quarkus-blast-app
+      app.kubernetes.io/instance: blast-postgres
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: quarkus-blast-app
+        app.kubernetes.io/instance: blast-postgres
+    spec:
+      containers:
+      - env:
+        - name: PGDATA
+          value: /work/data
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: postgres-secrets
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              key: user
+              name: postgres-secrets
+        image: blast-postgres:latest
+        name: blast-postgres
+        ports:
+        - containerPort: 5432
+          name: db-port
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 200m
+            memory: 512Mi
+        volumeMounts:
+        - mountPath: /work
+          name: blast-postgres-data
+      volumes:
+      - name: blast-postgres-data
+        persistentVolumeClaim:
+          claimName: blast-postgres-data
+status: {}
