@@ -66,7 +66,7 @@ spec:
               key: admins
               name: oidc-secrets
               optional: true
-        image: blast-quarkus:latest
+        image: quay.io/redhat-user-workloads/rh-quarkus-tenant/quarkus-blast/blast-quarkus@sha256:02efacf8628f7c92037a3b31dd6eeb058c7fb6891f9c846c6bb76b284a467d8b
         name: blast-quarkus
         ports:
         - containerPort: 8081
