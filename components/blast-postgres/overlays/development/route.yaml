@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: blast-postgres
     app.kubernetes.io/part-of: quarkus-blast
-  name: blast-postgres3cvd
+  name: blast-postgresff0b
 spec:
   port:
     targetPort: 5432
