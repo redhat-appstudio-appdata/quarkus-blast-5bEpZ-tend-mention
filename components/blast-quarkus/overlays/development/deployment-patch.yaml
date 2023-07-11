@@ -4,7 +4,6 @@ metadata:
   creationTimestamp: null
   name: blast-quarkus
 spec:
-  replicas: 1
   selector: {}
   strategy: {}
   template:
@@ -12,7 +11,7 @@ spec:
       creationTimestamp: null
     spec:
       containers:
-      - image: quay.io/redhat-user-workloads/rh-quarkus-tenant/quarkus-blast/blast-quarkus@sha256:9e5a32717cf45076c230328982b63d47e9e50bb0c28106a6d1e084fd4f1c067b
+      - image: quay.io/redhat-user-workloads/rh-quarkus-tenant/quarkus-blast/blast-quarkus@sha256:d832d410a3f27de031d91ef041d70bb49c1a7210e902b656976354acd05bb9de
         name: blast-quarkus
         resources: {}
 status: {}
