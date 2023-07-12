@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: blast-quarkus
     app.kubernetes.io/part-of: quarkus-blast
-  name: blast-quarkusewru
+  name: blast-quarkusgiz3
 spec:
   path: /
   port:
