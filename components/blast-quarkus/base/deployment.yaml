@@ -68,7 +68,7 @@ spec:
               optional: true
         - name: QUARKUS_PROFILE
           value: prod,github
-        image: quay.io/redhat-user-workloads/rh-quarkus-tenant/quarkus-blast/blast-quarkus@sha256:776890e274faff2feea080f7e61eaafbe38fae168961483f09b4ba3be0a0112c
+        image: quay.io/redhat-user-workloads/rh-quarkus-tenant/quarkus-blast/blast-quarkus@sha256:6d52ceea738e8670aa7b674709803d28deee3485fa88ceb2ab65ec55c60668e1
         name: blast-quarkus
         ports:
         - containerPort: 8081
